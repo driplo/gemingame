@@ -42,5 +42,7 @@ class CreateIdeasTable extends Migration
     public function down()
     {
         Schema::drop('ideas');
+        Schema::drop('ideas_elements');
+        Schema::drop('elements');
     }
 }
