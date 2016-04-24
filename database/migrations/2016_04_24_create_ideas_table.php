@@ -31,7 +31,7 @@ class CreateIdeasTable extends Migration
           $table->increments('idElement');
           $table->integer('idType');
           $table->integer('idChallenge');
-        })
+        });
     }
 
     /**
