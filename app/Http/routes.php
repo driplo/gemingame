@@ -26,10 +26,13 @@ Route::group(['middleware' => ['web']], function () {
   Route::get('/challenge/{challenge}', 'ChallengesController@detail');
 
   /*Ideas*/
-  Route::get('/ideas', 'IdeasController@index');
-  Route::get('/ideas/new', 'IdeasController@showStore');
-  Route::post('/ideas/new', 'IdeasController@store');
-  Route::get('/idea/{idea}', 'IdeasController@detail');
+  Route::get('/challenge/{challenge}/ideas', 'IdeasController@index'); //liste idée
+  Route::get('/challenge/{challenge}/ideas/new', 'IdeasController@showStore');//saisie nouvelle idée
+  Route::post('/challenge/{challenge}/ideas/new', 'IdeasController@store');//save nouvelle idée
+  Route::get('/idea/{idIdea}', 'IdeasController@detail');//détail idée
+
+  /*creation idée depuis une idée*/
+  Route::get('/challenge/{challenge}/ideas/new/{idIdea?}', 'IdeasController@showStore');//saisie nouvelle idée
 
   Route::get('/test', function () {
       return view('layouts.main');
